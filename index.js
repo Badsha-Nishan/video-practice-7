@@ -72,25 +72,46 @@
 
 // Practice 5
 
-const mobiles = [
-  { name: "Sumsung", price: 20000, camera: "12mp", color: "black" },
-  { name: "Xaomi", price: 25000, camera: "12mp", color: "red" },
-  { name: "Oppo", price: 28000, camera: "12mp", color: "gray" },
-  { name: "Apple", price: 210000, camera: "120mp", color: "orange" },
-  { name: "Realme", price: 15000, camera: "12mp", color: "blue" },
-  { name: "HTC", price: 40000, camera: "12mp", color: "white" },
-  { name: "Nokia", price: 60000, camera: "12mp", color: "purple" },
+// const mobiles = [
+//   { name: "Sumsung", price: 20000, camera: "12mp", color: "black" },
+//   { name: "Xaomi", price: 25000, camera: "12mp", color: "red" },
+//   { name: "Oppo", price: 28000, camera: "12mp", color: "gray" },
+//   { name: "Apple", price: 210000, camera: "120mp", color: "orange" },
+//   { name: "Realme", price: 15000, camera: "12mp", color: "blue" },
+//   { name: "HTC", price: 40000, camera: "12mp", color: "white" },
+//   { name: "Nokia", price: 60000, camera: "12mp", color: "purple" },
+// ];
+
+// function getCheapestPhone(phones) {
+//   let min = phones[0];
+//   for (const phone of phones) {
+//     if (phone.price < min.price) {
+//       min = phone;
+//     }
+//   }
+//   return min;
+// }
+
+// const cheapestPhone = getCheapestPhone(mobiles);
+// console.log(cheapestPhone);
+
+// Practice 6
+
+const products = [
+  { name: "shampoo", price: 300, quantity: 2 },
+  { name: "chiruni", price: 100, quantity: 5 },
+  { name: "shirt", price: 700, quantity: 1 },
+  { name: "pant", price: 1200, quantity: 7 },
+  { name: "sunglass", price: 800, quantity: 9 },
 ];
 
-function getCheapestPhone(phones) {
-  let min = phones[0];
-  for (const phone of phones) {
-    if (phone.price < min.price) {
-      min = phone;
-    }
+function getShoppingTotal(products) {
+  let sum = 0;
+  for (const val of products) {
+    sum += val.price * val.quantity;
   }
-  return min;
+  return sum;
 }
 
-const cheapestPhone = getCheapestPhone(mobiles);
-console.log(cheapestPhone);
+const totalCost = getShoppingTotal(products);
+console.log(totalCost);
