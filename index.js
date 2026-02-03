@@ -140,30 +140,64 @@
 // const output = discountPrice(quantity);
 // console.log(output);
 
-function layeredDiscountedTotal(quantity) {
-  const first100Price = 100;
-  const second100Price = 90;
-  const above200Price = 70;
-  if (quantity <= 100) {
-    const total = first100Price * quantity;
+// Practice 8
+
+// function layeredDiscountedTotal(quantity) {
+//   const first100Price = 100;
+//   const second100Price = 90;
+//   const above200Price = 70;
+//   if (quantity <= 100) {
+//     const total = first100Price * quantity;
+//     return total;
+//   } else if (quantity <= 200) {
+//     const first100Total = first100Price * 100;
+//     const remainQty = quantity - 100;
+//     const remainingTotal = remainQty * second100Price;
+//     const total = first100Total + remainingTotal;
+//     return total;
+//   } else {
+//     const first100Total = first100Price * 100;
+//     const second100Total = second100Price * 100;
+//     const remainingTotal = first100Total + second100Total;
+//     const remainQty = quantity - 200;
+//     const remainTotal = remainQty * above200Price;
+//     const total = remainingTotal + remainTotal;
+//     return total;
+//   }
+// }
+
+// const quantity = 201;
+// const result = layeredDiscountedTotal(quantity);
+// console.log(result);
+
+function add(num1, num2) {
+  return num1 + num2;
+}
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+function divide(num1, num2) {
+  return num1 / num2;
+}
+
+function calculator(a, b, operation) {
+  if (operation === "add") {
+    const total = add(a, b);
     return total;
-  } else if (quantity <= 200) {
-    const first100Total = first100Price * 100;
-    const remainQty = quantity - 100;
-    const remainingTotal = remainQty * second100Price;
-    const total = first100Total + remainingTotal;
+  } else if (operation === "subtract") {
+    const total = subtract(a, b);
     return total;
-  } else {
-    const first100Total = first100Price * 100;
-    const second100Total = second100Price * 100;
-    const remainingTotal = first100Total + second100Total;
-    const remainQty = quantity - 200;
-    const remainTotal = remainQty * above200Price;
-    const total = remainingTotal + remainTotal;
+  } else if (operation === "multiply") {
+    const total = multiply(a, b);
+    return total;
+  } else if (operation === "divide") {
+    const total = divide(a, b);
     return total;
   }
 }
 
-const quantity = 201;
-const result = layeredDiscountedTotal(quantity);
+const result = calculator(10, 5, "divide");
 console.log(result);
