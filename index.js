@@ -97,21 +97,45 @@
 
 // Practice 6
 
-const products = [
-  { name: "shampoo", price: 300, quantity: 2 },
-  { name: "chiruni", price: 100, quantity: 5 },
-  { name: "shirt", price: 700, quantity: 1 },
-  { name: "pant", price: 1200, quantity: 7 },
-  { name: "sunglass", price: 800, quantity: 9 },
-];
+// const products = [
+//   { name: "shampoo", price: 300, quantity: 2 },
+//   { name: "chiruni", price: 100, quantity: 5 },
+//   { name: "shirt", price: 700, quantity: 1 },
+//   { name: "pant", price: 1200, quantity: 7 },
+//   { name: "sunglass", price: 800, quantity: 9 },
+// ];
 
-function getShoppingTotal(products) {
-  let sum = 0;
-  for (const val of products) {
-    sum += val.price * val.quantity;
+// function getShoppingTotal(products) {
+//   let sum = 0;
+//   for (const val of products) {
+//     sum += val.price * val.quantity;
+//   }
+//   return sum;
+// }
+
+// const totalCost = getShoppingTotal(products);
+// console.log(totalCost);
+
+//  Practice 7
+
+/**
+ * upto --> 100
+ * more than 101-200: --> 90
+ * more than 200: --> 70
+ */
+
+function discountPrice(quantity) {
+  let total = 0;
+  if (quantity <= 100) {
+    total = quantity * 100;
+  } else if (quantity <= 200) {
+    total = quantity * 90;
+  } else {
+    total = quantity * 70;
   }
-  return sum;
+  return total;
 }
 
-const totalCost = getShoppingTotal(products);
-console.log(totalCost);
+const quantity = 201;
+const output = discountPrice(quantity);
+console.log(output);
