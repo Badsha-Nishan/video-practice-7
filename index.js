@@ -36,20 +36,36 @@
  * bed ---> 50 cft
  */
 
-function woodQuantity(chair, table, bed) {
-  const perChairWood = 3;
-  const perTableWood = 10;
-  const perBedWood = 50;
+// function woodQuantity(chair, table, bed) {
+//   const perChairWood = 3;
+//   const perTableWood = 10;
+//   const perBedWood = 50;
 
-  const totalChairWood = perChairWood * chair;
-  const totalTableWood = perTableWood * table;
-  const totalBedWood = perBedWood * bed;
-  const output = totalChairWood + totalTableWood + totalBedWood;
-  return output;
+//   const totalChairWood = perChairWood * chair;
+//   const totalTableWood = perTableWood * table;
+//   const totalBedWood = perBedWood * bed;
+//   const output = totalChairWood + totalTableWood + totalBedWood;
+//   return output;
+// }
+
+// const chair = 1;
+// const table = 1;
+// const bed = 2;
+// const totalWood = woodQuantity(chair, table, bed);
+// console.log(totalWood);
+
+// Practice 4
+
+function minPrice(arr) {
+  let min = arr[0];
+  for (const num of arr) {
+    if (num < min) {
+      min = num;
+    }
+  }
+  return min;
 }
 
-const chair = 1;
-const table = 1;
-const bed = 2;
-const totalWood = woodQuantity(chair, table, bed);
-console.log(totalWood);
+const prices = [20000, 25000, 30000, 18000, 35000, 76000];
+const result = minPrice(prices);
+console.log(result);
