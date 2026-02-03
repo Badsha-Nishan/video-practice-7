@@ -14,16 +14,42 @@
 
 // Practice 2
 
-function max(numbers) {
-  let output = numbers[0];
-  for (const num of numbers) {
-    if (num > output) {
-      output = num;
-    }
-  }
+// function max(numbers) {
+//   let output = numbers[0];
+//   for (const num of numbers) {
+//     if (num > output) {
+//       output = num;
+//     }
+//   }
+//   return output;
+// }
+
+// const heights = [66, 68, 58, 60, 78];
+// const getMax = max(heights);
+// console.log(getMax);
+
+// Practice 3
+
+/**
+ * chair ---> 3 cft
+ * table ---> 10 cft
+ * bed ---> 50 cft
+ */
+
+function woodQuantity(chair, table, bed) {
+  const perChairWood = 3;
+  const perTableWood = 10;
+  const perBedWood = 50;
+
+  const totalChairWood = perChairWood * chair;
+  const totalTableWood = perTableWood * table;
+  const totalBedWood = perBedWood * bed;
+  const output = totalChairWood + totalTableWood + totalBedWood;
   return output;
 }
 
-const heights = [66, 68, 58, 60, 78];
-const getMax = max(heights);
-console.log(getMax);
+const chair = 1;
+const table = 1;
+const bed = 2;
+const totalWood = woodQuantity(chair, table, bed);
+console.log(totalWood);
