@@ -56,16 +56,41 @@
 
 // Practice 4
 
-function minPrice(arr) {
-  let min = arr[0];
-  for (const num of arr) {
-    if (num < min) {
-      min = num;
+// function minPrice(arr) {
+//   let min = arr[0];
+//   for (const num of arr) {
+//     if (num < min) {
+//       min = num;
+//     }
+//   }
+//   return min;
+// }
+
+// const prices = [20000, 25000, 30000, 18000, 35000, 76000];
+// const result = minPrice(prices);
+// console.log(result);
+
+// Practice 5
+
+const mobiles = [
+  { name: "Sumsung", price: 20000, camera: "12mp", color: "black" },
+  { name: "Xaomi", price: 25000, camera: "12mp", color: "red" },
+  { name: "Oppo", price: 28000, camera: "12mp", color: "gray" },
+  { name: "Apple", price: 210000, camera: "120mp", color: "orange" },
+  { name: "Realme", price: 15000, camera: "12mp", color: "blue" },
+  { name: "HTC", price: 40000, camera: "12mp", color: "white" },
+  { name: "Nokia", price: 60000, camera: "12mp", color: "purple" },
+];
+
+function getCheapestPhone(phones) {
+  let min = phones[0];
+  for (const phone of phones) {
+    if (phone.price < min.price) {
+      min = phone;
     }
   }
   return min;
 }
 
-const prices = [20000, 25000, 30000, 18000, 35000, 76000];
-const result = minPrice(prices);
-console.log(result);
+const cheapestPhone = getCheapestPhone(mobiles);
+console.log(cheapestPhone);
